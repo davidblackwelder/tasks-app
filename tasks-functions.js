@@ -42,9 +42,19 @@ const renderTasks = function (tasks, filters) {
 
 // Get the DOM elements for an individual task
 const generateTaskDOM = function (task) {
-  const newEl = document.createElement("p");
-  newEl.textContent = task.text;
-  return newEl;
+  const taskEl = document.createElement("div");
+  const checkBox = document.createElement("input");
+  const textEl = document.createElement("span");
+  const button = document.createElement("button");
+
+  // Setup the select task checkbox
+  checkBox.setAttribute("type", "checkbox");
+  taskEl.appendChild(checkBox);
+
+  //
+
+  textEl.textContent = task.text;
+  return taskEl;
 };
 
 // Get the DOM elements for list summary
