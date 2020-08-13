@@ -55,6 +55,10 @@ const generateTaskDOM = function (task) {
   textEl.textContent = task.text;
   taskEl.appendChild(textEl);
 
+  // Setup the remove task button
+  button.textContent = "x";
+  taskEl.appendChild(button);
+
   return taskEl;
 };
 
