@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tasks App</title>
+  </head>
+  <body>
+    <h1>My Tasks App</h1>
+    <input id="search-text" type="text" placeholder="filter tasks" />
+    <div>
+      <label>
+        <input id="hide-completed" type="checkbox" /> Hide completed
+      </label>
+    </div>
+    <div id="tasks"></div>
+    <form id="create-task">
+      <input type="text" placeholder="New task" name="newTask" />
+      <button>Add task</button>
+    </form>
+
+    <script src="tasks-functions.js"></script>
+    <script src="tasks-app.js"></script>
+  </body>
+</html>
