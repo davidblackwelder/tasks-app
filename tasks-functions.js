@@ -44,16 +44,16 @@ const renderTasks = function (tasks, filters) {
 const generateTaskDOM = function (task) {
   const taskEl = document.createElement("div");
   const checkBox = document.createElement("input");
-  const textEl = document.createElement("span");
+  const taskTextEl = document.createElement("span");
   const button = document.createElement("button");
 
-  // Setup the select task checkbox
+  // Setup task checkbox
   checkBox.setAttribute("type", "checkbox");
   taskEl.appendChild(checkBox);
 
   // Setup the task text
-  textEl.textContent = task.text;
-  taskEl.appendChild(textEl);
+  taskTextEl.textContent = task.text;
+  taskEl.appendChild(taskTextEl);
 
   // Setup the remove task button
   button.textContent = "x";
