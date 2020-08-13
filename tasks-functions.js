@@ -51,9 +51,10 @@ const generateTaskDOM = function (task) {
   checkBox.setAttribute("type", "checkbox");
   taskEl.appendChild(checkBox);
 
-  //
-
+  // Setup the task text
   textEl.textContent = task.text;
+  taskEl.appendChild(textEl);
+
   return taskEl;
 };
 
