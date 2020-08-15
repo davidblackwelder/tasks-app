@@ -60,6 +60,7 @@ const generateTaskDOM = function (task) {
 
 	// Setup task checkbox
 	checkBox.setAttribute("type", "checkbox");
+	checkBox.checked = task.completed;
 	taskEl.appendChild(checkBox);
 
 	// Setup the task text
