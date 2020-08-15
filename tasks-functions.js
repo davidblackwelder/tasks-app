@@ -14,6 +14,7 @@ const saveTasks = function (tasks) {
 	localStorage.setItem("tasks", JSON.stringify(tasks));
 };
 
+// Remove a task from the list
 const removeTask = function (id) {
 	const taskIndex = tasks.findIndex(function (task) {
 		return task.id === id;
