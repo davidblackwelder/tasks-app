@@ -1,3 +1,7 @@
+// Add event handler to checkbox
+// Modify the correct objects completed property => toggleTask
+// Save and rerender
+
 // Read existing notes from localStorage
 const getSavedTasks = function () {
 	const tasksJSON = localStorage.getItem("tasks");
@@ -22,6 +26,17 @@ const removeTask = function (id) {
 
 	if (taskIndex > -1) {
 		tasks.splice(taskIndex, 1);
+	}
+};
+
+// Toggle the completed value for a given task
+const toggleTask = function (id) {
+	const task = tasks.find(function (task) {
+		return task.id === id;
+	});
+
+	if (task !== undefined) {
+		task.completed = !task.completed;
 	}
 };
 
@@ -62,6 +77,11 @@ const generateTaskDOM = function (task) {
 	checkBox.setAttribute("type", "checkbox");
 	checkBox.checked = task.completed;
 	taskEl.appendChild(checkBox);
+	checkBox.addEventListener("change", function () {
+		toggleTask(task.id);
+		saveTasks(tasks);
+		renderTasks(tasks, filters);
+	});
 
 	// Setup the task text
 	taskTextEl.textContent = task.text;
